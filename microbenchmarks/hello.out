@@ -1,0 +1,116 @@
+sim-safe: SimpleScalar/PISA Tool Set version 3.0 of August, 2003.
+Copyright (c) 1994-2003 by Todd M. Austin, Ph.D. and SimpleScalar, LLC.
+All Rights Reserved. This version of SimpleScalar is licensed for academic
+non-commercial use.  No portion of this work may be used by any commercial
+entity, or for any commercial purpose, without the prior written permission
+of SimpleScalar, LLC (info@simplescalar.com).
+
+sim: command line: ../simplescalar-3.0d/sim-safe hello 
+
+sim: simulation started @ Fri Mar 21 15:18:42 2025, options follow:
+
+sim-safe: This simulator implements a functional simulator.  This
+functional simulator is the simplest, most user-friendly simulator in the
+simplescalar tool set.  Unlike sim-fast, this functional simulator checks
+for all instruction errors, and the implementation is crafted for clarity
+rather than speed.
+
+# -config                     # load configuration from a file
+# -dumpconfig                 # dump configuration to a file
+# -h                    false # print help message    
+# -v                    false # verbose operation     
+# -d                    false # enable debug message  
+# -i                    false # start in Dlite debugger
+-seed                       1 # random number generator seed (0 for timer seed)
+# -q                    false # initialize and terminate immediately
+# -chkpt               <null> # restore EIO trace execution from <fname>
+# -redir:sim           <null> # redirect simulator output to file (non-interactive only)
+# -redir:prog          <null> # redirect simulated program output to file
+-nice                       0 # simulator scheduling priority
+-max:inst                   0 # maximum number of inst's to execute
+
+sim: ** starting functional simulation **
+hello
+
+sim: ** simulation statistics **
+sim_num_lduh                    125 # total number of load use hazards
+sim_load_use_ratio           0.0187 # load use fraction
+sim_num_insn                   6681 # total number of instructions executed
+sim_num_refs                   3855 # total number of loads and stores executed
+sim_elapsed_time                  1 # total simulation time in seconds
+sim_inst_rate             6681.0000 # simulation speed (in insts/sec)
+sim_num_RAW_hazard_q1             0 # total number of RAW hazards (q1)
+sim_num_RAW_hazard_q2             0 # total number of RAW hazards (q2)
+CPI_from_RAW_hazard_q1       1.0000 # CPI from RAW hazard (q1)
+CPI_from_RAW_hazard_q2       1.0000 # CPI from RAW hazard (q2)
+ld_text_base             0x00400000 # program text (code) segment base
+ld_text_size                  72128 # program text (code) size in bytes
+ld_data_base             0x10000000 # program initialized data segment base
+ld_data_size                   8304 # program init'ed `.data' and uninit'ed `.bss' size in bytes
+ld_stack_base            0x7fffc000 # program stack segment base (highest address in stack)
+ld_stack_size                 16384 # program initial stack size
+ld_prog_entry            0x00400140 # program entry point (initial PC)
+ld_environ_base          0x7fff8000 # program environment base address address
+ld_target_big_endian              0 # target executable endian-ness, non-zero if big endian
+mem.page_count                   26 # total number of pages allocated
+mem.page_mem                   104k # total size of memory pages allocated
+mem.ptab_misses                  26 # total first level page table misses
+mem.ptab_accesses            480602 # total page table accesses
+mem.ptab_miss_rate           0.0001 # first level page table miss rate
+
+Register Statistics
+All Writes - All Reads - Avg Read/Write - Min Read - Max Read
+r1	5	4	0.80	0	1
+r2	840	3578	4.26	0	8
+r3	548	983	1.79	0	4
+r4	85	148	1.74	0	6
+r5	49	81	1.65	0	8
+r6	33	56	1.70	0	4
+r7	22	3159	143.59	0	3072
+r8	422	851	2.02	0	5
+r9	7	7	1.00	0	2
+r10	1	0	0.00	0	0
+r11	1	0	0.00	0	0
+r14	1	0	0.00	0	0
+r15	6	5	0.83	0	1
+r16	80	307	3.84	0	23
+r17	47	60	1.28	0	8
+r18	32	50	1.56	0	5
+r19	26	39	1.50	0	3
+r20	14	38	2.71	0	18
+r21	17	18	1.06	0	2
+r22	7	4	0.57	0	2
+r23	7	7	1.00	0	2
+r28	2	1	0.50	0	1
+r29	102	437	4.28	0	19
+r30	1	1	1.00	0	1
+r31	112	111	0.99	0	1
+
+Distribution Statistics
+Reg	0-16	17-32	33-64	65-128	129-256	>256
+r1	5	0	0	0	0	0	
+r2	840	0	0	0	0	0	
+r3	548	0	0	0	0	0	
+r4	85	0	0	0	0	0	
+r5	49	0	0	0	0	0	
+r6	33	0	0	0	0	0	
+r7	19	2	0	0	0	1	
+r8	422	0	0	0	0	0	
+r9	7	0	0	0	0	0	
+r10	1	0	0	0	0	0	
+r11	1	0	0	0	0	0	
+r14	1	0	0	0	0	0	
+r15	6	0	0	0	0	0	
+r16	78	2	0	0	0	0	
+r17	47	0	0	0	0	0	
+r18	32	0	0	0	0	0	
+r19	26	0	0	0	0	0	
+r20	13	1	0	0	0	0	
+r21	17	0	0	0	0	0	
+r22	7	0	0	0	0	0	
+r23	7	0	0	0	0	0	
+r28	2	0	0	0	0	0	
+r29	100	2	0	0	0	0	
+r30	1	0	0	0	0	0	
+r31	112	0	0	0	0	0	
+
