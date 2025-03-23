@@ -5,9 +5,9 @@ non-commercial use.  No portion of this work may be used by any commercial
 entity, or for any commercial purpose, without the prior written permission
 of SimpleScalar, LLC (info@simplescalar.com).
 
-sim: command line: ./sim-safe /cad2/ACA/benchmarks/gcc.ss /cad2/ACA/benchmarks/o.i 
+sim: command line: ./sim-safe ../../000.bin.ss/gcc.ss /cad2/ACA/myss/t.i 
 
-sim: simulation started @ Wed Mar 19 17:23:24 2025, options follow:
+sim: simulation started @ Sun Mar 23 15:03:47 2025, options follow:
 
 sim-safe: This simulator implements a functional simulator.  This
 functional simulator is the simplest, most user-friendly simulator in the
@@ -32,15 +32,15 @@ rather than speed.
 sim: ** starting functional simulation **
 warning: syscall: sigvec ignored
 warning: syscall: sigvec ignored
-gcc.ss: /cad2/ACA/benchmarks/o.i: No such file or directory
+gcc.ss: /cad2/ACA/myss/t.s: Permission denied
 
 sim: ** simulation statistics **
-sim_num_lduh                   1747 # total number of load use hazards
-sim_load_use_ratio           0.0296 # load use fraction
-sim_num_insn                  59025 # total number of instructions executed
-sim_num_refs                  14233 # total number of loads and stores executed
+sim_num_lduh                  33439 # total number of load use hazards
+sim_load_use_ratio           0.0422 # load use fraction
+sim_num_insn                 792520 # total number of instructions executed
+sim_num_refs                 302115 # total number of loads and stores executed
 sim_elapsed_time                  1 # total simulation time in seconds
-sim_inst_rate            59025.0000 # simulation speed (in insts/sec)
+sim_inst_rate           792520.0000 # simulation speed (in insts/sec)
 sim_num_RAW_hazard_q1             0 # total number of RAW hazards (q1)
 sim_num_RAW_hazard_q2             0 # total number of RAW hazards (q2)
 CPI_from_RAW_hazard_q1       1.0000 # CPI from RAW hazard (q1)
@@ -54,9 +54,85 @@ ld_stack_size                 16384 # program initial stack size
 ld_prog_entry            0x00400140 # program entry point (initial PC)
 ld_environ_base          0x7fff8000 # program environment base address address
 ld_target_big_endian              0 # target executable endian-ness, non-zero if big endian
-mem.page_count                  670 # total number of pages allocated
-mem.page_mem                  2680k # total size of memory pages allocated
-mem.ptab_misses                 672 # total first level page table misses
-mem.ptab_accesses          15610454 # total page table accesses
+mem.page_count                  706 # total number of pages allocated
+mem.page_mem                  2824k # total size of memory pages allocated
+mem.ptab_misses                 711 # total first level page table misses
+mem.ptab_accesses          19120873 # total page table accesses
 mem.ptab_miss_rate           0.0000 # first level page table miss rate
+
+Register Statistics
+All Writes - All Reads - Avg Read/Write - Min Read - Max Read
+r1	17420	17419	1.00	0	1
+r2	171292	194984	1.14	0	13
+r3	61205	97298	1.59	0	116
+r4	33219	50430	1.52	0	128
+r5	24994	44019	1.76	0	1682
+r6	16958	30327	1.79	0	423
+r7	5657	18388	3.25	0	3072
+r8	4577	6951	1.52	0	255
+r9	1258	3053	2.43	0	372
+r10	145	1057	7.29	0	901
+r11	277	1129	4.08	0	223
+r12	114	974	8.54	0	573
+r13	113	134	1.19	0	18
+r14	172	230	1.34	0	15
+r15	217	126	0.58	0	2
+r16	23962	55076	2.30	0	31
+r17	21908	35630	1.63	0	259
+r18	23143	42110	1.82	0	29
+r19	14744	25617	1.74	0	18
+r20	15176	16523	1.09	0	117
+r21	14813	9983	0.67	0	45
+r22	11429	11909	1.04	0	12
+r23	314	1994	6.35	0	1353
+r24	101	455	4.50	0	19
+r25	97	473	4.88	0	64
+r28	2	1	0.50	0	1
+r29	31200	190817	6.12	0	1226
+r30	234	2010	8.59	0	1353
+r31	31578	31577	1.00	0	1
+r32	25	24	0.96	0	1
+r52	1	1	1.00	0	1
+r54	1	1	1.00	0	1
+r56	1	1	1.00	0	1
+r64	208	175	0.84	0	1
+r65	208	207	1.00	0	1
+
+Distribution Statistics
+Reg	16	32	64	128	256	>256
+r1	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r2	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r3	0.999984	0.999984	0.999984	1.000000	1.000000	1.000000	
+r4	0.999849	0.999849	0.999940	1.000000	1.000000	1.000000	
+r5	0.997839	0.999560	0.999880	0.999920	0.999960	1.000000	
+r6	0.998998	0.999351	0.999528	0.999646	0.999705	1.000000	
+r7	0.992219	0.994164	0.999293	0.999646	1.000000	1.000000	
+r8	0.998034	0.998908	0.999563	0.999782	1.000000	1.000000	
+r9	0.998410	0.998410	0.999205	0.999205	0.999205	1.000000	
+r10	0.986111	0.993056	1.000000	1.000000	1.000000	1.000000	
+r11	0.996390	0.996390	0.996390	0.996390	1.000000	1.000000	
+r12	0.991150	0.991150	0.991150	0.991150	0.991150	1.000000	
+r13	0.991150	1.000000	1.000000	1.000000	1.000000	1.000000	
+r14	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r15	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r16	0.993782	1.000000	1.000000	1.000000	1.000000	1.000000	
+r17	0.997124	0.999772	0.999817	0.999863	0.999954	1.000000	
+r18	0.999957	1.000000	1.000000	1.000000	1.000000	1.000000	
+r19	0.999525	1.000000	1.000000	1.000000	1.000000	1.000000	
+r20	0.998484	0.998550	0.999934	1.000000	1.000000	1.000000	
+r21	0.999932	0.999932	1.000000	1.000000	1.000000	1.000000	
+r22	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r23	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r24	0.980198	1.000000	1.000000	1.000000	1.000000	1.000000	
+r25	0.989691	0.989691	1.000000	1.000000	1.000000	1.000000	
+r28	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r29	0.955832	1.000000	1.000000	1.000000	1.000000	1.000000	
+r30	0.982833	0.995708	0.995708	0.995708	1.000000	1.000000	
+r31	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r32	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r52	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r54	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r56	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r64	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r65	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
 

@@ -222,7 +222,7 @@ sim_aux_stats(FILE *stream)		/* output stream */
 	}	
   }
   fprintf(stream, "\nDistribution Statistics\n");
-  fprintf(stream, "Reg\t0-16\t17-32\t33-64\t65-128\t129-256\t>256\n");
+  fprintf(stream, "Reg\t16\t32\t64\t128\t256\t>256\n");
 
   for (i = 0; i < MD_TOTAL_REGS; i++) {
     /* We only print statistics for registers that were actually written to */
@@ -230,7 +230,7 @@ sim_aux_stats(FILE *stream)		/* output stream */
       fprintf(stream, "r%d\t", i);
 
       for (j = 0; j < 6; j++) {
-        fprintf(stream, "%lld\t", reg_dist[i][j]);
+        fprintf(stream, "%lf\t", (double)reg_dist[i][j]/(double)reg_dist[i][5]);
       }
 
       fprintf(stream, "\n");
@@ -474,10 +474,13 @@ sim_main(void)
 				/* This is to find the bucket of distribution the reads belong to */
 				for(init_bucket = 16, bucket = 0; ; 
 								init_bucket *= 2, bucket++){
-					if(last_write <= init_bucket || bucket >= 5){
-						reg_dist[r_out[i]][bucket]++;
+					if (bucket > 5 ){
 						break;
 					}
+					if(last_write <= init_bucket){
+						reg_dist[r_out[i]][bucket]++;
+					}
+					
 				}
 				/* After all of that reset the read counter */
 				reg_statistics[r_out[i]][1] = 0;

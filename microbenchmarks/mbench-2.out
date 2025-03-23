@@ -7,7 +7,7 @@ of SimpleScalar, LLC (info@simplescalar.com).
 
 sim: command line: ../simplescalar-3.0d/sim-safe mbench-2 
 
-sim: simulation started @ Fri Mar 21 15:27:42 2025, options follow:
+sim: simulation started @ Sun Mar 23 14:02:42 2025, options follow:
 
 sim-safe: This simulator implements a functional simulator.  This
 functional simulator is the simplest, most user-friendly simulator in the
@@ -32,18 +32,18 @@ rather than speed.
 sim: ** starting functional simulation **
 
 sim: ** simulation statistics **
-sim_num_lduh                     89 # total number of load use hazards
-sim_load_use_ratio           0.0000 # load use fraction
-sim_num_insn                1811130 # total number of instructions executed
-sim_num_refs                 303653 # total number of loads and stores executed
+sim_num_lduh                3702090 # total number of load use hazards
+sim_load_use_ratio           0.2957 # load use fraction
+sim_num_insn               12519149 # total number of instructions executed
+sim_num_refs                4817664 # total number of loads and stores executed
 sim_elapsed_time                  1 # total simulation time in seconds
-sim_inst_rate          1811130.0000 # simulation speed (in insts/sec)
+sim_inst_rate          12519149.0000 # simulation speed (in insts/sec)
 sim_num_RAW_hazard_q1             0 # total number of RAW hazards (q1)
 sim_num_RAW_hazard_q2             0 # total number of RAW hazards (q2)
 CPI_from_RAW_hazard_q1       1.0000 # CPI from RAW hazard (q1)
 CPI_from_RAW_hazard_q2       1.0000 # CPI from RAW hazard (q2)
 ld_text_base             0x00400000 # program text (code) segment base
-ld_text_size                  23184 # program text (code) size in bytes
+ld_text_size                  24048 # program text (code) size in bytes
 ld_data_base             0x10000000 # program initialized data segment base
 ld_data_size                   4096 # program init'ed `.data' and uninit'ed `.bss' size in bytes
 ld_stack_base            0x7fffc000 # program stack segment base (highest address in stack)
@@ -54,18 +54,18 @@ ld_target_big_endian              0 # target executable endian-ness, non-zero if
 mem.page_count                   12 # total number of pages allocated
 mem.page_mem                    48k # total size of memory pages allocated
 mem.ptab_misses                  12 # total first level page table misses
-mem.ptab_accesses           7994052 # total page table accesses
+mem.ptab_accesses          59859348 # total page table accesses
 mem.ptab_miss_rate           0.0000 # first level page table miss rate
 
 Register Statistics
 All Writes - All Reads - Avg Read/Write - Min Read - Max Read
 r1	5	4	0.80	0	1
-r2	901701	904430	1.00	0	8
-r3	301519	900934	2.99	0	4
-r4	1067	301103	282.20	0	301
-r5	1031	2048	1.99	0	5
-r6	28	300051	10716.11	0	300000
-r7	22	4156	188.91	0	3072
+r2	4505708	4508437	1.00	0	8
+r3	4799520	4799935	1.00	0	4
+r4	66	103	1.56	0	5
+r5	30	48	1.60	0	5
+r6	27	51	1.89	0	4
+r7	21	3156	150.29	0	3072
 r8	409	820	2.00	0	8
 r9	3	4	1.33	0	2
 r10	1	0	0.00	0	0
@@ -79,31 +79,33 @@ r21	5	7	1.40	0	2
 r22	4	2	0.50	0	1
 r23	4	4	1.00	0	1
 r28	2	1	0.50	0	1
-r29	82	319	3.89	0	19
+r29	83	321	3.87	0	19
+r30	2	4814011	2407005.50	0	4814010
 r31	92	91	0.99	0	1
 
 Distribution Statistics
-Reg	0-16	17-32	33-64	65-128	129-256	>256
-r1	5	0	0	0	0	0	
-r2	901701	0	0	0	0	0	
-r3	301519	0	0	0	0	0	
-r4	67	0	0	0	0	1000	
-r5	1031	0	0	0	0	0	
-r6	27	0	0	0	0	1	
-r7	18	2	0	0	0	2	
-r8	409	0	0	0	0	0	
-r9	3	0	0	0	0	0	
-r10	1	0	0	0	0	0	
-r11	1	0	0	0	0	0	
-r16	62	2	0	0	0	0	
-r17	36	0	0	0	0	0	
-r18	23	0	0	0	0	0	
-r19	17	0	0	0	0	0	
-r20	8	0	0	0	0	0	
-r21	5	0	0	0	0	0	
-r22	4	0	0	0	0	0	
-r23	4	0	0	0	0	0	
-r28	2	0	0	0	0	0	
-r29	80	2	0	0	0	0	
-r31	92	0	0	0	0	0	
+Reg	16	32	64	128	256	>256
+r1	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r2	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r3	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r4	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r5	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r6	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r7	0.900000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r8	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r9	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r10	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r11	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r16	0.968750	1.000000	1.000000	1.000000	1.000000	1.000000	
+r17	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r18	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r19	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r20	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r21	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r22	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r23	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r28	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r29	0.975904	1.000000	1.000000	1.000000	1.000000	1.000000	
+r30	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
+r31	1.000000	1.000000	1.000000	1.000000	1.000000	1.000000	
 
